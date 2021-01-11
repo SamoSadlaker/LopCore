@@ -1,5 +1,7 @@
 package eu.samosadlaker.lopcore.core;
 
+import eu.samosadlaker.lopcore.listeners.JoinListener;
+import eu.samosadlaker.lopcore.listeners.QuitListener;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
 import org.bukkit.plugin.PluginDescriptionFile;
@@ -30,11 +32,18 @@ public final class Main extends JavaPlugin {
         }
         reloadConfig();
 
+        registerListeners();
+
         logger.sendMessage(Colors.formatColor("&b-------------------------------------"));
         logger.sendMessage(Colors.formatColor("&aPlugin &b" + pdf.getName() + " &asuccessfully enabled"));
         logger.sendMessage(Colors.formatColor("&a" + pdf.getVersion() + " &f| &a" + pdf.getAuthors().toString() + " &f| &a" + pdf.getWebsite() ));
         logger.sendMessage(Colors.formatColor("&b-------------------------------------"));
 
+    }
+
+    private void registerListeners(){
+        getServer().getPluginManager().registerEvents(new JoinListener(), this);
+        getServer().getPluginManager().registerEvents(new QuitListener(), this);
     }
 
     @Override
