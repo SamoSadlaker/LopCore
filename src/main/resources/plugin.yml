@@ -1,0 +1,7 @@
+name: LopCore
+version: ${project.version}
+main: eu.samosadlaker.lopcore.core.main.Main
+api-version: 1.16
+author: SamoSadlaker
+description: This is a simple plugin for Loklop vanila server
+website: www.samosadlaker.eu
