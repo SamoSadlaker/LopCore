@@ -1,4 +1,18 @@
+################################################
+#   _                  _____
+#  | |                / ____|
+#  | |     ___  _ __ | |     ___  _ __ ___
+#  | |    / _ \| '_ \| |    / _ \| '__/ _ \
+#  | |___| (_) | |_) | |___| (_) | | |  __/
+#  |______\___/| .__/ \_____\___/|_|  \___|
+#              | |
+#              |_|
+################################################
+
+#Prefix of plugin (supporting HEX Colors &#RRGGBB)
 prefix: "&7[&5&lLopCore&7]"
+
+#Welcome messages list (motd)
 welcome-message:
   - "&eVitaj na Loklopovom serveri..."
   - "&r"
@@ -7,11 +21,16 @@ welcome-message:
   - "&eDynmapu nájdeš na &6http://map.loklopuvserver.eu:36638"
   - "&r"
   - "&e- Loklop"
+#Join Message
 join-message: "&8[&a&l+&8] &aPlayer &2%player% &ajoined the game."
+#Leave message
 leave-message: "&8[&4&l-&4] &cPlayer &4%player% &cleftthe game."
 
+#Main Title
 join-title: "&a&lWelcome back!"
+#Subtitle
 join-subtitle: "&bplayer &3%player%"
 
+#Action bar message
 join-action-bar: "&aWelcome back on &bLoklop &aserver player &b%player%&a."
 
