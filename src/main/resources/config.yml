@@ -3,5 +3,9 @@ welcome-message:
   - "&aTest1"
   - "&bTestabcdef1"
   - "&dYolooo"
-join-message: "&8[&a&l+&8] &aPlayer &2@Player &ajoined the game."
-leave-message: "&8[&4&l-&4] &cPlayer &4@Player &cleftthe game."
+join-message: "&8[&a&l+&8] &aPlayer &2%player% &ajoined the game."
+leave-message: "&8[&4&l-&4] &cPlayer &4%player% &cleftthe game."
+
+join-title: "&a&lWelcome back!"
+join-subtitle: "&bPlayer &3%player%"
+

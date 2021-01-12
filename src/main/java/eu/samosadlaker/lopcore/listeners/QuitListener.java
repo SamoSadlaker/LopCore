@@ -21,6 +21,6 @@ public class QuitListener implements Listener {
     public void onPlayerLeave(PlayerQuitEvent e){
         Player p = e.getPlayer();
 
-        e.setQuitMessage(Colors.formatColor(config.getString("leave-message").replace("@Player", p.getDisplayName())));
+        e.setQuitMessage(Colors.formatColor(config.getString("leave-message").replace("%player%", p.getDisplayName())));
     }
 }
