@@ -1,11 +1,17 @@
 prefix: "&7[&5&lLopCore&7]"
 welcome-message:
-  - "&aTest1"
-  - "&bTestabcdef1"
-  - "&dYolooo"
+  - "&eVitaj na Loklopovom serveri..."
+  - "&r"
+  - "&ePre aktiváciu HUD Súradníc napíš &6/coordinates toggle"
+  - "&r"
+  - "&eDynmapu nájdeš na &6http://map.loklopuvserver.eu:36638"
+  - "&r"
+  - "&e- Loklop"
 join-message: "&8[&a&l+&8] &aPlayer &2%player% &ajoined the game."
 leave-message: "&8[&4&l-&4] &cPlayer &4%player% &cleftthe game."
 
 join-title: "&a&lWelcome back!"
-join-subtitle: "&bPlayer &3%player%"
+join-subtitle: "&bplayer &3%player%"
+
+join-action-bar: "&aWelcome back on &bLoklop &aserver player &b%player%&a."
 
