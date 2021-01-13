@@ -4,6 +4,7 @@ import eu.samosadlaker.lopcore.commands.Admin;
 import eu.samosadlaker.lopcore.commands.TabCompleter;
 import eu.samosadlaker.lopcore.listeners.JoinListener;
 import eu.samosadlaker.lopcore.listeners.QuitListener;
+import eu.samosadlaker.lopcore.utils.AutoMessage;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
 import org.bukkit.plugin.PluginDescriptionFile;
@@ -23,6 +24,8 @@ public final class Main extends JavaPlugin {
     static Main plugin;
     CommandSender logger = Bukkit.getConsoleSender();
     PluginDescriptionFile pdf = this.getDescription();
+    int interval = getConfig().getInt("message-interval") * 20;
+    int taskID;
 
     /**
      * Get access to main class from other class.
@@ -59,6 +62,8 @@ public final class Main extends JavaPlugin {
         registerListeners();
         registerCommands();
         registerTabCompleter();
+
+        taskID = new AutoMessage().runTaskTimer(this, 0, interval).getTaskId();
 
         logger.sendMessage(Colors.formatColor("&b-------------------------------------"));
         logger.sendMessage(Colors.formatColor("&aPlugin &b" + pdf.getName() + " &asuccessfully enabled"));
@@ -110,6 +115,9 @@ public final class Main extends JavaPlugin {
      */
     @Override
     public void onDisable() {
+
+        Bukkit.getScheduler().cancelTask(taskID);
+
         // Plugin shutdown logic
         logger.sendMessage(Colors.formatColor("&b-------------------------------------"));
         logger.sendMessage(Colors.formatColor("&4Plugin &b" + pdf.getName() + " &4successfully disabled"));

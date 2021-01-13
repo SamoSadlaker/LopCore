@@ -12,6 +12,9 @@
 #Prefix of plugin (supporting HEX Colors &#RRGGBB)
 prefix: "&7[&5&lLopCore&7]"
 
+####################
+# Wellcome messages
+###################
 #Welcome messages list (motd)
 welcome-message:
   - "&eVitaj na Loklopovom serveri..."
@@ -34,9 +37,22 @@ join-subtitle: "&bplayer &3%player%"
 #Action bar message
 join-action-bar: "&aWelcome back on &bLoklop &aserver player &b%player%&a."
 
+
+#################
+# Admin settings
+#################
 #Admin permission
 permission: "lopcore.admin"
 
 #Reload completed message
 reload-completed: "&aPlugin successfully reloaded"
 
+#################
+# Auto Messages
+#################
+message-interval: 10
+message-random: true
+messages:
+  - "&aTest message"
+  - "&bLorem ipsum dolor"
+  - "&dod teba mám jabko chcem ho zjesť"
