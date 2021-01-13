@@ -1,5 +1,7 @@
 package eu.samosadlaker.lopcore.core;
 
+import eu.samosadlaker.lopcore.commands.Admin;
+import eu.samosadlaker.lopcore.commands.TabCompleter;
 import eu.samosadlaker.lopcore.listeners.JoinListener;
 import eu.samosadlaker.lopcore.listeners.QuitListener;
 import org.bukkit.Bukkit;
@@ -55,6 +57,8 @@ public final class Main extends JavaPlugin {
         reloadConfig();
 
         registerListeners();
+        registerCommands();
+        registerTabCompleter();
 
         logger.sendMessage(Colors.formatColor("&b-------------------------------------"));
         logger.sendMessage(Colors.formatColor("&aPlugin &b" + pdf.getName() + " &asuccessfully enabled"));
@@ -64,7 +68,7 @@ public final class Main extends JavaPlugin {
     }
 
     /**
-     * This is a simple function. Initializing all even listeners.
+     * This is a simple function. Initializing all eventlisteners.
      *
      * @author  SamoSadlaker
      * @version 1.0
@@ -73,6 +77,28 @@ public final class Main extends JavaPlugin {
     private void registerListeners(){
         getServer().getPluginManager().registerEvents(new JoinListener(), this);
         getServer().getPluginManager().registerEvents(new QuitListener(), this);
+    }
+
+    /**
+     * This is a simple function. Initializing all commands.
+     *
+     * @author  SamoSadlaker
+     * @version 1.0
+     * @since   2021-1-13
+     */
+    private void registerCommands(){
+        getCommand("lopcore").setExecutor(new Admin());
+    }
+
+    /**
+     * This is a simple function. Initializing all tab-completer.
+     *
+     * @author  SamoSadlaker
+     * @version 1.0
+     * @since   2021-1-13
+     */
+    private void registerTabCompleter(){
+        getCommand("lopcore").setTabCompleter(new TabCompleter());
     }
 
     /**

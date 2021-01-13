@@ -34,3 +34,9 @@ join-subtitle: "&bplayer &3%player%"
 #Action bar message
 join-action-bar: "&aWelcome back on &bLoklop &aserver player &b%player%&a."
 
+#Admin permission
+permission: "lopcore.admin"
+
+#Reload completed message
+reload-completed: "&aPlugin successfully reloaded"
+
