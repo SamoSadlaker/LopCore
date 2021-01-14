@@ -27,7 +27,7 @@ welcome-message:
 #Join Message
 join-message: "&8[&a&l+&8] &aPlayer &2%player% &ajoined the game."
 #Leave message
-leave-message: "&8[&4&l-&4] &cPlayer &4%player% &cleftthe game."
+leave-message: "&8[&4&l-&8] &cPlayer &4%player% &cleftthe game."
 
 #Main Title
 join-title: "&a&lWelcome back!"
@@ -50,9 +50,15 @@ reload-completed: "&aPlugin successfully reloaded"
 #################
 # Auto Messages
 #################
-message-interval: 10
+message-interval: 900
 message-random: true
 messages:
-  - "&aTest message"
-  - "&bLorem ipsum dolor"
-  - "&dod teba mám jabko chcem ho zjesť"
+  - "&dINFO: 14.1.2021 od 12:00 bude probíhat údržba na serveru. Server se jde přesouvat na nejnovější verzi a bude se optimalizovat. Předpokládaný konec údržby nevíme ... odhadujeme že server by už od 18:00 by měl být dostupný."
+  - "&aNezapomínej že máme TeamSpeak přijď někdy pokecat ... ts3.loklopuvserver.eu"
+  - "&bNová lotéria v shope loklopa a Sempty bola spustená... lístky nájadete v shope na spawne"
+
+
+##############
+# Chat Format
+##############
+format: "&8[&7Hráč&8] &f%name%&f » &f%message%"

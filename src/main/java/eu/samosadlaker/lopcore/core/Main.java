@@ -2,6 +2,7 @@ package eu.samosadlaker.lopcore.core;
 
 import eu.samosadlaker.lopcore.commands.Admin;
 import eu.samosadlaker.lopcore.commands.TabCompleter;
+import eu.samosadlaker.lopcore.listeners.ChatListener;
 import eu.samosadlaker.lopcore.listeners.JoinListener;
 import eu.samosadlaker.lopcore.listeners.QuitListener;
 import eu.samosadlaker.lopcore.utils.AutoMessage;
@@ -82,6 +83,7 @@ public final class Main extends JavaPlugin {
     private void registerListeners(){
         getServer().getPluginManager().registerEvents(new JoinListener(), this);
         getServer().getPluginManager().registerEvents(new QuitListener(), this);
+        getServer().getPluginManager().registerEvents(new ChatListener(), this);
     }
 
     /**

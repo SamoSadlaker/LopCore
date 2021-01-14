@@ -6,7 +6,7 @@
 
     <groupId>eu.samosadlaker.LopCore.core</groupId>
     <artifactId>LopCore</artifactId>
-    <version>3.3</version>
+    <version>4.1</version>
     <packaging>jar</packaging>
 
     <name>LopCore</name>
