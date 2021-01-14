@@ -74,7 +74,11 @@ motd:
 # MOTD
 ##############
 scoreboard:
+  #Title of scoreboard
   title: "&d&lSmrti"
+  #Last line in scoreboard
   spacer: "&7--------------------"
+  #Format displaying message
   format: "&3%player% &f» &b%deaths%"
+  #Update scoreboard in seconds
   update: 120

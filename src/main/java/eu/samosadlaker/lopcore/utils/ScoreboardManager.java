@@ -14,14 +14,25 @@ import org.bukkit.scoreboard.Objective;
 import org.bukkit.scoreboard.Score;
 import org.bukkit.scoreboard.Scoreboard;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-
+/**
+ * <h1>Creating Scoreboard!</h1>
+ *
+ * @author  SamoSadlaker
+ * @version 1.0
+ * @since   2021-01-14
+ */
 public class ScoreboardManager {
 
     static Main plugin = Main.getPlugin();
     static FileConfiguration config = plugin.getConfig();
 
+    /**
+     * This function create & set scoreboard with player deaths.
+     *
+     * @author  SamoSadlaker
+     * @version 1.0
+     * @since   2021-1-14
+     */
     public static void createBoard (Player p){
         Scoreboard board = Bukkit.getScoreboardManager().getNewScoreboard();
         Objective objective = board.registerNewObjective("Deaths", "dummy", Colors.formatColor(config.getString("scoreboard.title")));
@@ -42,6 +53,13 @@ public class ScoreboardManager {
         p.setScoreboard(board);
     }
 
+    /**
+     * This function updates scoreboard..
+     *
+     * @author  SamoSadlaker
+     * @version 1.0
+     * @since   2021-1-13
+     */
     public static void updateBoard (Player p){
         int update = config.getInt("scoreboard.update") * 20;
         new BukkitRunnable(){
