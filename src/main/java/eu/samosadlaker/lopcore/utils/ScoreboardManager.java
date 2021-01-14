@@ -8,6 +8,7 @@ import org.bukkit.OfflinePlayer;
 import org.bukkit.Statistic;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
+import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.scoreboard.DisplaySlot;
 import org.bukkit.scoreboard.Objective;
 import org.bukkit.scoreboard.Score;
@@ -39,6 +40,20 @@ public class ScoreboardManager {
         }
 
         p.setScoreboard(board);
+    }
+
+    public static void updateBoard (Player p){
+        int update = config.getInt("scoreboard.update") * 20;
+        new BukkitRunnable(){
+            @Override
+            public void run(){
+                if(p == null){
+                    this.cancel();
+                } else {
+                    createBoard(p);
+                }
+            }
+        }.runTaskTimer(plugin, 0, update);
     }
 
 }

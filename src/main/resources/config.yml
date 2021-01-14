@@ -74,6 +74,7 @@ motd:
 # MOTD
 ##############
 scoreboard:
-  title: "&dSmrti"
+  title: "&d&lSmrti"
   spacer: "&7--------------------"
   format: "&3%player% &f» &b%deaths%"
+  update: 120
