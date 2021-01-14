@@ -7,7 +7,7 @@ import eu.samosadlaker.lopcore.listeners.JoinListener;
 import eu.samosadlaker.lopcore.listeners.MotdListener;
 import eu.samosadlaker.lopcore.listeners.QuitListener;
 import eu.samosadlaker.lopcore.utils.AutoMessage;
-import eu.samosadlaker.lopcore.utils.ScoreboardManager;
+import eu.samosadlaker.lopcore.utils.ScoreBoardUpdate;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
 import org.bukkit.plugin.PluginDescriptionFile;
@@ -27,7 +27,8 @@ public final class Main extends JavaPlugin {
     static Main plugin;
     CommandSender logger = Bukkit.getConsoleSender();
     PluginDescriptionFile pdf = this.getDescription();
-    int interval = getConfig().getInt("message-interval") * 20;
+    int automessageinterval = getConfig().getInt("message-interval") * 20;
+    int scoreboardinterval = getConfig().getInt("scoreboard.update") * 20;
     int automessagetaskID;
     int scoreboardtaskID;
 
@@ -67,7 +68,8 @@ public final class Main extends JavaPlugin {
         registerCommands();
         registerTabCompleter();
 
-        automessagetaskID = new AutoMessage().runTaskTimer(this, 0, interval).getTaskId();
+        automessagetaskID = new AutoMessage().runTaskTimer(this, 0, automessageinterval).getTaskId();
+        scoreboardtaskID = new ScoreBoardUpdate().runTaskTimer(this, 0, scoreboardinterval).getTaskId();
 
         logger.sendMessage(Colors.formatColor("&b-------------------------------------"));
         logger.sendMessage(Colors.formatColor("&aPlugin &b" + pdf.getName() + " &asuccessfully enabled"));
@@ -123,6 +125,7 @@ public final class Main extends JavaPlugin {
     public void onDisable() {
 
         Bukkit.getScheduler().cancelTask(automessagetaskID);
+        Bukkit.getScheduler().cancelTask(scoreboardtaskID);
 
         // Plugin shutdown logic
         logger.sendMessage(Colors.formatColor("&b-------------------------------------"));

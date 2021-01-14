@@ -51,27 +51,8 @@ public class ScoreboardManager {
         }
 
         p.setScoreboard(board);
+
     }
 
-    /**
-     * This function updates scoreboard..
-     *
-     * @author  SamoSadlaker
-     * @version 1.0
-     * @since   2021-1-13
-     */
-    public static void updateBoard (Player p){
-        int update = config.getInt("scoreboard.update") * 20;
-        new BukkitRunnable(){
-            @Override
-            public void run(){
-                if(p == null){
-                    this.cancel();
-                } else {
-                    createBoard(p);
-                }
-            }
-        }.runTaskTimer(plugin, 0, update);
-    }
 
 }
