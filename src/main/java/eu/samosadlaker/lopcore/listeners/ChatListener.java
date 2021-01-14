@@ -29,5 +29,6 @@ public class ChatListener implements Listener {
     @EventHandler
     public void onPlayerChat(AsyncPlayerChatEvent e){
         e.setFormat(Colors.formatColor(config.getString("format").replace("%name%", e.getPlayer().getDisplayName()).replace("%message%", e.getMessage())));
+
     }
 }

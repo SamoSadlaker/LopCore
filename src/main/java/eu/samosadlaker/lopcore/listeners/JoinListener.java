@@ -2,6 +2,7 @@ package eu.samosadlaker.lopcore.listeners;
 
 import eu.samosadlaker.lopcore.core.Colors;
 import eu.samosadlaker.lopcore.core.Main;
+import eu.samosadlaker.lopcore.utils.ScoreboardManager;
 import net.md_5.bungee.api.ChatMessageType;
 
 import net.md_5.bungee.api.chat.TextComponent;
@@ -11,6 +12,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.scoreboard.Scoreboard;
 
 import java.util.List;
 
@@ -50,6 +52,8 @@ public class JoinListener implements Listener {
         Bukkit.getScheduler ().runTaskLater (plugin, () -> p.sendTitle(Colors.formatColor(config.getString("join-title")), Colors.formatColor(config.getString("join-subtitle")).replace("%player%", p.getDisplayName()), 40, 80, 40), 40);
 
         Bukkit.getScheduler ().runTaskLater (plugin, () -> sendActionBar(p), 40);
+
+        ScoreboardManager.createBoard(p);
     }
     /**
      * This is a simple function. This function

@@ -28,6 +28,6 @@ public class MotdListener implements Listener {
      */
     @EventHandler
     public void onPlayerPing(ServerListPingEvent e){
-        e.setMotd(Colors.formatColor(config.getString("motd.line1") + "\n" + config.getString("motd.lin2")));
+        e.setMotd(Colors.formatColor(config.getString("motd.line1") + "\n" + config.getString("motd.line2")));
     }
 }
