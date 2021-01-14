@@ -1,6 +1,5 @@
 package eu.samosadlaker.lopcore.utils;
 
-import com.sun.org.apache.xerces.internal.xs.StringList;
 import eu.samosadlaker.lopcore.core.Colors;
 import eu.samosadlaker.lopcore.core.Main;
 import org.bukkit.Bukkit;
@@ -8,7 +7,6 @@ import org.bukkit.OfflinePlayer;
 import org.bukkit.Statistic;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
-import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.scoreboard.DisplaySlot;
 import org.bukkit.scoreboard.Objective;
 import org.bukkit.scoreboard.Score;

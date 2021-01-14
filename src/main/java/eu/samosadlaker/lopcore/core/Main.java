@@ -2,10 +2,7 @@ package eu.samosadlaker.lopcore.core;
 
 import eu.samosadlaker.lopcore.commands.Admin;
 import eu.samosadlaker.lopcore.commands.TabCompleter;
-import eu.samosadlaker.lopcore.listeners.ChatListener;
-import eu.samosadlaker.lopcore.listeners.JoinListener;
-import eu.samosadlaker.lopcore.listeners.MotdListener;
-import eu.samosadlaker.lopcore.listeners.QuitListener;
+import eu.samosadlaker.lopcore.listeners.*;
 import eu.samosadlaker.lopcore.utils.AutoMessage;
 import eu.samosadlaker.lopcore.utils.ScoreBoardUpdate;
 import org.bukkit.Bukkit;
@@ -90,6 +87,7 @@ public final class Main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new QuitListener(), this);
         getServer().getPluginManager().registerEvents(new ChatListener(), this);
         getServer().getPluginManager().registerEvents(new MotdListener(), this);
+        getServer().getPluginManager().registerEvents(new DeathListener(), this);
     }
 
     /**

@@ -2,10 +2,16 @@ package eu.samosadlaker.lopcore.listeners;
 
 import eu.samosadlaker.lopcore.core.Colors;
 import eu.samosadlaker.lopcore.core.Main;
+import org.bukkit.Bukkit;
+import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
 
 /**
  * <h1>Chat listener!</h1>
@@ -28,7 +34,10 @@ public class ChatListener implements Listener {
      */
     @EventHandler
     public void onPlayerChat(AsyncPlayerChatEvent e){
+
         e.setFormat(Colors.formatColor(config.getString("format").replace("%name%", e.getPlayer().getDisplayName()).replace("%message%", e.getMessage())));
+
+
 
     }
 }

@@ -71,7 +71,7 @@ motd:
   line2: "      &a&lUPDATE: &2Chystáme novou verzi 1.16.4"
 
 ##############
-# MOTD
+# Scoreboard
 ##############
 scoreboard:
   #Title of scoreboard
@@ -82,3 +82,7 @@ scoreboard:
   format: "&3%player% &f» &b%deaths%"
   #Update scoreboard in seconds
   update: 120
+
+
+
+
