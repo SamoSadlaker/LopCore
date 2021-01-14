@@ -62,3 +62,10 @@ messages:
 # Chat Format
 ##############
 format: "&8[&7Hráč&8] &f%name%&f » &f%message%"
+
+##############
+# MOTD
+##############
+motd:
+  line1: "            &d||| &5&lLoklopova Vanila &d|||&r"
+  line2: "      &a&lUPDATE: &2Chystáme novou verzi 1.16.4"

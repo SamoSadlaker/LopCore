@@ -5,29 +5,29 @@ import eu.samosadlaker.lopcore.core.Main;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.player.AsyncPlayerChatEvent;
+import org.bukkit.event.server.ServerListPingEvent;
 
 /**
- * <h1>Chat listener!</h1>
+ * <h1>Motd!</h1>
  *
  * @author  SamoSadlaker
  * @version 1.0
  * @since   2021-01-14
  */
-public class ChatListener implements Listener {
+public class MotdListener implements Listener {
 
     static Main plugin = Main.getPlugin();
     FileConfiguration config = plugin.getConfig();
 
     /**
-     * ChatListener... this function editing default minecraft message format
+     * Serverlist Ping Listener... this function editing motd of server
      *
      * @author  SamoSadlaker
      * @version 1.0
      * @since   2021-1-14
      */
     @EventHandler
-    public void onPlayerChat(AsyncPlayerChatEvent e){
-        e.setFormat(Colors.formatColor(config.getString("format").replace("%name%", e.getPlayer().getDisplayName()).replace("%message%", e.getMessage())));
+    public void onPlayerPing(ServerListPingEvent e){
+        e.setMotd(Colors.formatColor(config.getString("motd.line1") + "\n" + config.getString("motd.lin2")));
     }
 }
