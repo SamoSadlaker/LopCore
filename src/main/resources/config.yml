@@ -23,6 +23,8 @@ welcome-message:
   - "&r"
   - "&eDynmapu nájdeš na &6http://map.loklopuvserver.eu:36638"
   - "&r"
+  - "&eNovinka... Máme nový discord: http://discord.loklopuvserver.eu"
+  - "&r"
   - "&e- Loklop"
 #Join Message
 join-message: "&8[&a&l+&8] &aPlayer &2%player% &ajoined the game."
@@ -53,8 +55,9 @@ reload-completed: "&aPlugin successfully reloaded"
 message-interval: 900
 message-random: true
 messages:
-  - "&dINFO: 14.1.2021 od 12:00 bude probíhat údržba na serveru. Server se jde přesouvat na nejnovější verzi a bude se optimalizovat. Předpokládaný konec údržby nevíme ... odhadujeme že server by už od 18:00 by měl být dostupný."
+  - "&5INFO: &dByl resetován end takže můžete jít hledat elytru."
   - "&aNezapomínej že máme TeamSpeak přijď někdy pokecat ... ts3.loklopuvserver.eu"
+  - "&cNový Discord server kde budou všechna oznámení, novinky najdeš zde: http://discord.loklopuvserver.eu"
   - "&bNová lotéria v shope loklopa a Sempty bola spustená... lístky nájadete v shope na spawne"
 
 
@@ -80,8 +83,6 @@ scoreboard:
   spacer: "&7--------------------"
   #Format displaying message
   format: "&3%player% &f» &b%deaths%"
-  #Update scoreboard in seconds
-  update: 120
 
 
 

@@ -47,11 +47,9 @@ public class JoinListener implements Listener {
         List<String> messages = config.getStringList("welcome-message");
 
 
-        Bukkit.getScheduler ().runTaskLater (plugin, () -> sendMotd(messages, p), 20);
+        sendMotd(messages, p);
 
-        Bukkit.getScheduler ().runTaskLater (plugin, () -> p.sendTitle(Colors.formatColor(config.getString("join-title")), Colors.formatColor(config.getString("join-subtitle")).replace("%player%", p.getDisplayName()), 40, 80, 40), 40);
-
-        Bukkit.getScheduler ().runTaskLater (plugin, () -> sendActionBar(p), 40);
+       p.sendTitle(Colors.formatColor(config.getString("join-title")), Colors.formatColor(config.getString("join-subtitle")).replace("%player%", p.getDisplayName()), 40, 80, 40);
 
         ScoreboardManager.createBoard(p);
     }
@@ -71,16 +69,4 @@ public class JoinListener implements Listener {
         }
     }
 
-    /**
-     * This is a simple function. This function need Player instance.
-     * Send a action bar message.
-     *
-     * @author  SamoSadlaker
-     * @version 1.0
-     * @since   2021-1-12
-     * @param p Player instance
-     */
-    private void sendActionBar(Player p){
-        p.spigot().sendMessage(ChatMessageType.ACTION_BAR, TextComponent.fromLegacyText(Colors.formatColor(config.getString("join-action-bar")).replace("%player%", p.getDisplayName())));
-    }
 }
