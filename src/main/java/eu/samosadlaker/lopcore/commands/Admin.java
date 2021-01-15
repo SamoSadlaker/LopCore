@@ -2,17 +2,12 @@ package eu.samosadlaker.lopcore.commands;
 
 import eu.samosadlaker.lopcore.core.Colors;
 import eu.samosadlaker.lopcore.core.Main;
-import eu.samosadlaker.lopcore.utils.ScoreboardManager;
 import org.bukkit.Bukkit;
-import org.bukkit.OfflinePlayer;
-import org.bukkit.Statistic;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
-
-import java.util.ArrayList;
 
 /**
  * <h1>Admin commands!</h1>
@@ -51,9 +46,6 @@ public class Admin implements CommandExecutor {
             if(args[0].equalsIgnoreCase("reload")){
                 plugin.getPluginLoader().disablePlugin(plugin);
                 plugin.getPluginLoader().enablePlugin(plugin);
-                for(Player player : Bukkit.getOnlinePlayers()){
-                    ScoreboardManager.createBoard(player);
-                }
                 sender.sendMessage(Colors.formatColor(prefix + config.getString("reload-completed")));
                 return true;
             }

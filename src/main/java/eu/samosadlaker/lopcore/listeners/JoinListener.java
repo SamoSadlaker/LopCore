@@ -2,17 +2,14 @@ package eu.samosadlaker.lopcore.listeners;
 
 import eu.samosadlaker.lopcore.core.Colors;
 import eu.samosadlaker.lopcore.core.Main;
-import eu.samosadlaker.lopcore.utils.ScoreboardManager;
-import net.md_5.bungee.api.ChatMessageType;
 
-import net.md_5.bungee.api.chat.TextComponent;
-import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
-import org.bukkit.scoreboard.Scoreboard;
+
 
 import java.util.List;
 
@@ -37,7 +34,7 @@ public class JoinListener implements Listener {
      * @version 1.0
      * @since   2021-1-11
      */
-    @EventHandler
+    @EventHandler(priority = EventPriority.LOW)
     public void onPlayerJoin(PlayerJoinEvent e) throws InterruptedException {
         Player p = e.getPlayer();
 
@@ -49,9 +46,8 @@ public class JoinListener implements Listener {
 
         sendMotd(messages, p);
 
-       p.sendTitle(Colors.formatColor(config.getString("join-title")), Colors.formatColor(config.getString("join-subtitle")).replace("%player%", p.getDisplayName()), 40, 80, 40);
+       p.sendTitle(Colors.formatColor(config.getString("join-title")), Colors.formatColor(config.getString("join-subtitle")).replace("%player%", p.getDisplayName()), 30, 60, 30);
 
-        ScoreboardManager.createBoard(p);
     }
     /**
      * This is a simple function. This function
@@ -64,9 +60,13 @@ public class JoinListener implements Listener {
      * @param p Player instance
      */
     private void sendMotd(List<String>messages, Player p){
+        String message = "";
         for( int i = 0; i < messages.size(); i++){
-            p.sendMessage(Colors.formatColor(messages.get(i)));
+
+
+            message = message + messages.get(i) + "\n";
         }
+        p.sendMessage(Colors.formatColor(message));
     }
 
 }

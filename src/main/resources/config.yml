@@ -23,7 +23,7 @@ welcome-message:
   - "&r"
   - "&eDynmapu nájdeš na &6http://map.loklopuvserver.eu:36638"
   - "&r"
-  - "&eNovinka... Máme nový discord: http://discord.loklopuvserver.eu"
+  - "&eNovinka... Máme nový discord: &6http://discord.loklopuvserver.eu"
   - "&r"
   - "&e- Loklop"
 #Join Message
@@ -56,8 +56,8 @@ message-interval: 900
 message-random: true
 messages:
   - "&5INFO: &dByl resetován end takže můžete jít hledat elytru."
-  - "&aNezapomínej že máme TeamSpeak přijď někdy pokecat ... ts3.loklopuvserver.eu"
-  - "&cNový Discord server kde budou všechna oznámení, novinky najdeš zde: http://discord.loklopuvserver.eu"
+  - "&aNezapomínej že máme TeamSpeak přijď někdy pokecat ... &fts3.loklopuvserver.eu"
+  - "&cNový Discord server kde budou všechna oznámení, novinky najdeš zde: &fhttp://discord.loklopuvserver.eu"
   - "&bNová lotéria v shope loklopa a Sempty bola spustená... lístky nájadete v shope na spawne"
 
 
